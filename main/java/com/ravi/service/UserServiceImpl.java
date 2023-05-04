@@ -28,14 +28,14 @@ public class UserServiceImpl implements UserService {
 		 
 		 userRepo.save(userEntity);
 		 
-		 //user.setPassword(null);
+		
 		
 		return true;
 	}
 
 	@Override
 	public String login(LoginForm form) {
-		 User entity = userRepo.findByUserEmailAndUserPwd(form.getEmail(), form.getPassword());
+		 User entity = userRepo.findByEmailAndPassword(form.getEmail(), form.getPassword());
 		
 		if(entity == null) {
 			return "invalid Credential";

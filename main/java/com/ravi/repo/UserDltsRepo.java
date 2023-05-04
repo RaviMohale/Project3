@@ -10,8 +10,7 @@ public interface UserDltsRepo  extends JpaRepository<User, Integer>{
 	public User findByEmail(String email);
 	
 	
-
-	public User findByUserEmailAndUserPwd(String email, String password);
+	public User findByEmailAndPassword(String email, String password);
 
 	
 }
